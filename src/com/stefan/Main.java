@@ -37,7 +37,7 @@ public class Main  {
 
         System.out.print(askForFirstNumber);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForFirstNumber);
         }
 
@@ -45,7 +45,7 @@ public class Main  {
 
         System.out.print(askForSecondNumber);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForSecondNumber);
         }
 
@@ -58,11 +58,11 @@ public class Main  {
         int inputNumber;
         String askForNumber = "Alege un număr: ";
 
-        System.out.println("");
+        System.out.println();
         System.out.println("T2: Citire a unui number de la tastatură.");
         System.out.print(askForNumber);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForNumber);
         }
 
@@ -81,11 +81,11 @@ public class Main  {
         int inputNumber;
         String askForNumber = "Alege un număr: ";
 
-        System.out.println("");
+        System.out.println();
         System.out.println("T3: Citire a unui number de la tastatură.");
         System.out.print(askForNumber);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForNumber);
         }
 
@@ -115,11 +115,11 @@ public class Main  {
         String askForOperator = "Alege tipul de operație matematică: ";
         String operationTypeError = "Operație matematică invalidă!";
 
-        System.out.println("");
+        System.out.println();
         System.out.println("T4: Realizati o aplicatie ce imita un calculator.");
         System.out.print(askForNumberA);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForNumberA);
         }
 
@@ -127,7 +127,7 @@ public class Main  {
 
         System.out.print(askForNumberB);
 
-        while(!IsInputAnInteger()){
+        while(!isInputAnInteger()){
             System.out.print(askForNumberB);
         }
 
@@ -137,19 +137,19 @@ public class Main  {
 
         operator = scanner.next();
 
-        while(!IsInputAValidOperator(operator)){
+        while(!isInputAValidOperator(operator)){
             System.out.println(operationTypeError);
             System.out.print(askForOperator);
             operator = scanner.next();
         }
 
-        System.out.print(OperationResult(operator, a,b));
+        System.out.print(operationResult(operator, a,b));
     }
 
     private static void t5AllEvenNumbers(){
 
-        System.out.println("");
-        System.out.println("");
+        System.out.println();
+        System.out.println();
         System.out.println("T5: Afișați toate numerele pare de a 0 la 100.");
 
         for(int i=0;i <= 100; i++){
@@ -163,7 +163,7 @@ public class Main  {
     }
 
     //Helper Methods
-    private static boolean IsInputAnInteger(){
+    private static boolean isInputAnInteger(){
         if(!scanner.hasNextInt()){
             System.out.println(scanner.next() + " nu este un număr întreg!");
             return false;
@@ -173,36 +173,23 @@ public class Main  {
         }
     }
 
-    private static boolean IsInputAValidOperator(String inputOperator){
-        switch (inputOperator){
-            case "-":
-                return true;
-            case "+":
-                return true;
-            case "*":
-                return true;
-            case "/":
-                return true;
-            default:
-                return false;
-        }
+    private static boolean isInputAValidOperator(String inputOperator){
+        return switch (inputOperator) {
+            case "-", "+", "*", "/" -> true;
+            default -> false;
+        };
     }
 
-    private static String OperationResult(String inputOperator, int a, int b){
+    private static String operationResult(String inputOperator, int a, int b){
 
         String prefix = "Rezultatul operației matematice este ";
 
-        switch (inputOperator){
-            case "-":
-                return prefix + Integer.toString(a - b);
-            case "+":
-                return prefix + Integer.toString(a + b);
-            case "*":
-                return prefix + Integer.toString(a * b);
-            case "/":
-                return prefix + Float.toString( (float)a / (float)b);
-            default:
-                return "";
-        }
+        return switch (inputOperator) {
+            case "-" -> prefix + (a - b);
+            case "+" -> prefix + (a + b);
+            case "*" -> prefix + a * b;
+            case "/" -> prefix + (float) a / (float) b;
+            default -> "";
+        };
     }
 }
