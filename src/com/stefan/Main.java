@@ -12,7 +12,7 @@ public class Main  {
 
         t1MultiplyTwoNumbers();
 
-        t2Readakeyboardnumber();
+        t2ReadAKeyboardNumber();
 
         t3ReadAKeyboardNumber();
 
@@ -54,7 +54,7 @@ public class Main  {
         System.out.println("Rezultatul înmulțirii este: " + firstNumber * secondNumber);
     }
 
-    private static void t2Readakeyboardnumber(){
+    private static void t2ReadAKeyboardNumber(){
         int inputNumber;
         String askForNumber = "Alege un număr: ";
 
