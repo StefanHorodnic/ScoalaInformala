@@ -1,14 +1,11 @@
 package com.stefan;
-import java.util.Scanner;
 
-public class Main  {
+import static com.stefan.HomeworkHelper.*;
 
-    //Fields
-    private static Scanner scanner;
+public class Homework_1 {
 
     //Constructor
     public static void main(String[] args) {
-        createScanner();
 
         t1MultiplyTwoNumbers();
 
@@ -19,11 +16,6 @@ public class Main  {
         t4Calculator();
 
         t5AllEvenNumbers();
-    }
-
-    //Private methods
-    private static void createScanner(){
-        scanner = new Scanner(System.in);
     }
 
     private static void t1MultiplyTwoNumbers(){
@@ -160,24 +152,6 @@ public class Main  {
 
 
 
-    }
-
-    //Helper Methods
-    private static boolean isInputAnInteger(){
-        if(!scanner.hasNextInt()){
-            System.out.println(scanner.next() + " nu este un număr întreg!");
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private static boolean isInputAValidOperator(String inputOperator){
-        return switch (inputOperator) {
-            case "-", "+", "*", "/" -> true;
-            default -> false;
-        };
     }
 
     private static String operationResult(String inputOperator, int a, int b){
