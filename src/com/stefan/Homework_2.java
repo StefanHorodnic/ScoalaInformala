@@ -53,6 +53,5 @@ public class Homework_2 {
         else{
             System.out.println("Ciudat că ai înălțimea sau greutatea mai mică sau egală cu 0!!");
         }
-
     }
 }
