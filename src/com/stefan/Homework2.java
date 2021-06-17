@@ -3,7 +3,7 @@ package com.stefan;
 import static com.stefan.HomeworkHelper.isInputAFloat;
 import static com.stefan.HomeworkHelper.scanner;
 
-public class Homework_2 {
+public class Homework2 {
 
     //Main method
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package com.stefan;
 
 import static com.stefan.HomeworkHelper.*;
 
-public class Homework_1 {
+public class Homework1 {
 
     //Constructor
     public static void main(String[] args) {
